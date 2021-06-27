@@ -1,13 +1,13 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 
 export default function SearchUser() {
 
-    const {form, onChange, cleanFields, getData} = useContext(GlobalStateContext)
+    const {form, onChange, cleanFields, getUserData} = useContext(GlobalStateContext)
 
     const onFinderUserOrRepo = (event) => {
         event.preventDefault()
-        getData()
+        getUserData()
         cleanFields()
     }
 
@@ -24,8 +24,6 @@ export default function SearchUser() {
                 />
                 <button>Buscar</button>
             </form>
-
-
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import useForm from '../hooks/useForm';
 import useRequestData from '../hooks/useRequestData';
 import { GlobalStateContext } from "./GlobalStateContext";
@@ -9,9 +9,9 @@ export const GlobalState = (props) => {
         searchedUser: ""
     })
 
-    const { data, getData } = useRequestData({}, form, "")
-
-    return <GlobalStateContext.Provider value={{form, onChange, cleanFields, data, getData }}>
+    const { data: userData, setData: setUser, getData: getUserData } = useRequestData({}, `${form.searchedUser}?`, "")
+ 
+    return <GlobalStateContext.Provider value={{form, onChange, cleanFields, userData, setUser, getUserData }}>
         {props.children}
     </GlobalStateContext.Provider>
 }
