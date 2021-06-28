@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton'
 import logoHeader from '../../assets/github-finder-icon.png'
 import { LogoHeader } from './styled'
 
+
 export default function Header() {
     const history = useHistory()
     const {setUser} = useContext(GlobalStateContext)

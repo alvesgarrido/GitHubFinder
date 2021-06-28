@@ -7,6 +7,7 @@ import Fab from '@material-ui/core/Fab'
 import { LinkedIn } from '@material-ui/icons'
 import { HomePageMain, MessageHome } from './styled'
 
+
 export default function HomePage() {
     const { userData } = useContext(GlobalStateContext)
 

@@ -6,11 +6,12 @@ import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
 import { ProfileContainer, ProfileContent, AvatarImg, NameUser, LoginNameUser } from './styled'
 
+
 export default function UserInfosCard() {
     const { userData } = useContext(GlobalStateContext)
     const history = useHistory()
     return (
-        <div>
+        <section>
             {userData && userData.id && (
                     history.location.pathname === "/" ? (
                         <ProfileContainer>
@@ -52,6 +53,6 @@ export default function UserInfosCard() {
                     )
                 )
             }
-        </div>
+        </section>
     )
 }

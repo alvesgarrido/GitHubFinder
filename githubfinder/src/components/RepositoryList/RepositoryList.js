@@ -1,16 +1,16 @@
-import React, {useState} from 'react'
+import React from 'react'
+import Loading from '../Loading/Loading'
 import DeviceHubRoundedIcon from '@material-ui/icons/DeviceHubRounded'
 import StarBorderRoundedIcon from '@material-ui/icons/StarBorderRounded'
 import VisibilityRoundedIcon from '@material-ui/icons/VisibilityRounded'
 import SentimentDissatisfiedRoundedIcon from '@material-ui/icons/SentimentDissatisfiedRounded'
 import { RepoContainer, ReposInfos, SpecificInfo, IconInfos, LinkRepo, ErrorFinder } from './styled'
 
+
 export default function RepositoryList(props) {
     const repoRender = props.repo
-    
-    useState(() => {
-        console.log(repoRender)
-    }, [repoRender])
+    const quantityRepo = props.lengthRepo
+
     const listRepo = repoRender && repoRender.map((repository) => {
         return (
             <RepoContainer variant="outlined" key={repository.name}>
@@ -32,18 +32,17 @@ export default function RepositoryList(props) {
             </RepoContainer>
         )
     })
-        
-    return (
-        <div>
-            {listRepo}
-            {/* {listRepo.lenght > 0 ? listRepo : <p>Teste</p>} */}
-        </div>
-    )
+
+    if (quantityRepo === undefined) {
+        return <Loading />
+    } else if (quantityRepo > 0) {
+        return <div>{listRepo}</div>
+    } else if (quantityRepo === 0) {
+        return (
+            <ErrorFinder>
+                <SentimentDissatisfiedRoundedIcon fontSize="large" />
+                <h3>O usuário ainda não favoritou nenhum repositório</h3>
+            </ErrorFinder>
+        )
+    }
 }
-
-
-/* : 
-<ErrorFinder> 
-    <SentimentDissatisfiedRoundedIcon fontSize="large" />
-    <h3>O usuário ainda não favoritou nenhum repositório</h3>
-</ErrorFinder>  */

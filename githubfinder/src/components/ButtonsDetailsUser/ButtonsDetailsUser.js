@@ -7,8 +7,8 @@ import { ButtonsContainer, ButtonsCustom } from './styled'
 
 export default function ButtonsDetailsUser() {
     const params = useParams();
-    const { data: repo, getData: getRepo } = useRequestData([], `${params.login}/repos?`)
-    const { data: starred, getData: getStarred } = useRequestData([], `${params.login}/starred?`)
+    const { data: repo, lengthDataRequest: numberOfRepo, getData: getRepo } = useRequestData([], `${params.login}/repos?`)
+    const { data: starred, lengthDataRequest: numberOfStarred, getData: getStarred } = useRequestData([], `${params.login}/starred?`)
     const [buttonAction, setButtonAction] = useState({ repoButton: false, starredButton: false })
   
     const goToRepo = () => {
@@ -43,8 +43,8 @@ export default function ButtonsDetailsUser() {
                     Favoritos
                 </ButtonsCustom>
             </ButtonsContainer>
-            {buttonAction.repoButton && <RepositoryList repo={repo} />}
-            {buttonAction.starredButton && <RepositoryList repo={starred} />}
+            {buttonAction.repoButton && <RepositoryList repo={repo} lengthRepo={numberOfRepo} />}
+            {buttonAction.starredButton && <RepositoryList repo={starred} lengthRepo={numberOfStarred} />}
         </section>
         
         

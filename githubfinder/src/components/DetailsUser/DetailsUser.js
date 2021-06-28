@@ -11,6 +11,7 @@ import BusinessRoundedIcon from '@material-ui/icons/BusinessRounded'
 import SentimentSatisfiedRoundedIcon from '@material-ui/icons/SentimentSatisfiedRounded'
 import { InfoBoxUser, GridInfosUser, ParagInfo, IconInfos } from './styled'
 
+
 export default function DetailsUser() {
 
     const params = useParams();
@@ -22,7 +23,7 @@ export default function DetailsUser() {
     }, [params])
 
     setUser(data)
-
+    
     return (
         <main>
             {data.id ?
@@ -43,16 +44,24 @@ export default function DetailsUser() {
                             <ParagInfo><strong>Repositórios públicos: </strong>{data.public_repos}</ParagInfo>
                         </GridInfosUser>
                     </InfoBoxUser>
-                    <InfoBoxUser elevation={2}>
-                        <GridInfosUser>
-                            <IconInfos><BusinessRoundedIcon fontSize="large" /></IconInfos>
-                            <ParagInfo><strong>Empresa: </strong>{data.company}</ParagInfo>
-                        </GridInfosUser>
-                        <GridInfosUser>
-                            <IconInfos><SentimentSatisfiedRoundedIcon fontSize="large" /></IconInfos>
-                            <ParagInfo><strong>Bio: </strong>{data.bio}</ParagInfo>
-                        </GridInfosUser>
-                    </InfoBoxUser>
+                    {data.company || data.bio ?
+                        <InfoBoxUser elevation={2}>
+                            {data.company &&
+                                <GridInfosUser>
+                                    <IconInfos><BusinessRoundedIcon fontSize="large" /></IconInfos>
+                                    <ParagInfo><strong>Empresa: </strong>{data.company}</ParagInfo>
+                                </GridInfosUser>
+                            }
+                            {data.bio &&
+                                <GridInfosUser>
+                                    <IconInfos><SentimentSatisfiedRoundedIcon fontSize="large" /></IconInfos>
+                                    <ParagInfo><strong>Bio: </strong>{data.bio}</ParagInfo>
+                                </GridInfosUser>
+                            }
+                        </InfoBoxUser> 
+                    : 
+                        ""
+                    }
                 </section>
             :
                 <Loading />

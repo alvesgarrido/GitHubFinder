@@ -4,6 +4,7 @@ import DetailsUser from '../../components/DetailsUser/DetailsUser'
 import ButtonsDetailsUser from '../../components/ButtonsDetailsUser/ButtonsDetailsUser'
 import { MainContainerDetailPage, ProfileContainer, DetailsContainer, ButtonsContainer } from './styled'
 
+
 export default function UserDetailsPage() {
     return (
         <MainContainerDetailPage>

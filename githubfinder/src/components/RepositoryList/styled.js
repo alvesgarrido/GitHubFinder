@@ -36,8 +36,12 @@ export const LinkRepo = styled.a`
 `
 export const ErrorFinder = styled.div`
     display: flex;
-    margin: 0 20px;
-    width: 80%;
+    margin: 20px 0;
+    width: 100%;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 500px) {
+        font-size: 0.65rem;
+    }
 `

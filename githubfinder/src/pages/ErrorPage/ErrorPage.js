@@ -2,6 +2,7 @@ import React from 'react'
 import LogoGitFinder from '../../assets/github-finder-prim-color-icon.png'
 import { ErrorPageMain, MessageError } from './styled'
 
+
 export default function ErrorPage() {
     return (
         <ErrorPageMain>
@@ -11,6 +12,5 @@ export default function ErrorPage() {
                 <h4>Navegue para outra página.</h4>
             </MessageError>
         </ErrorPageMain>
-        
     )
 }

@@ -7,7 +7,6 @@ export const ErrorPageMain = styled.div`
   justify-content: center;
   width: 100vw;
 `
-
 export const MessageError = styled.article`
     display: flex;
     flex-direction: column;
