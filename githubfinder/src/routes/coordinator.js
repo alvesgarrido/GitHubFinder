@@ -1,7 +1,8 @@
-export const goToHome = (history) => {
+export const goToHome = (history, setUser) => {
     history.push("/")
+    setUser({})
 }
 
-export const goToUserDetails= (history, name) => {
-    history.push(`/${name}`)
+export const goToUserDetails= (history, login) => {
+    history.push(`/${login}`)
 }

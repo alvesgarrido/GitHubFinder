@@ -13,7 +13,7 @@ export default function Router() {
                 <Route exact path="/">
                     <HomePage/>
                 </Route>
-                <Route exact path="/:name">
+                <Route exact path="/:login">
                     <UserDetailsPage/>
                 </Route>
                 <Route>
