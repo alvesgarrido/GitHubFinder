@@ -14,7 +14,7 @@ export const RepoContainer = styled(Paper)`
         color: ${secondaryColor};
     }
 
-    @media (max-width: 450px) {
+    @media (max-width: 800px) {
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;

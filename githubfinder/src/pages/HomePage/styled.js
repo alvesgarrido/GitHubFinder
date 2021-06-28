@@ -15,4 +15,10 @@ export const MessageHome = styled.article`
     width: 40%;
     height: 60vh;
     color: ${primaryColor};
+
+    @media (max-width: 700px) {
+      font-size: 0.8rem;
+      width: 80%;
+      height: 50vh;
+    }
 `
