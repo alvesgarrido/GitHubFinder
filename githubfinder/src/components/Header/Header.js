@@ -3,8 +3,10 @@ import { useHistory } from 'react-router'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import Button from '@material-ui/core/Button'
 import { goToHome } from '../../routes/coordinator'
+import IconButton from '@material-ui/core/IconButton'
+import logoHeader from '../../assets/github-finder-icon.png'
+import { LogoHeader } from './styled'
 
 export default function Header() {
     const history = useHistory()
@@ -12,7 +14,8 @@ export default function Header() {
   return (
       <AppBar position="static">
         <Toolbar>
-            <Button onClick={() => goToHome(history, setUser)}>GitHub Finder</Button>
+            <IconButton onClick={() => goToHome(history, setUser)}><LogoHeader src={logoHeader}/></IconButton>
+            <h3>GitHub Finder</h3>
         </Toolbar>
       </AppBar>
   );

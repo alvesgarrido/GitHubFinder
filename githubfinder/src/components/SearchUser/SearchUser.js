@@ -1,29 +1,51 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import Paper from '@material-ui/core/Paper'
+import { InputsContainer, FormContainer, ButtonSearch } from './styled'
+
 
 export default function SearchUser() {
 
-    const {form, onChange, cleanFields, getUserData} = useContext(GlobalStateContext)
+    const { form, onChange, cleanFields, getUserData } = useContext(GlobalStateContext)
+
+    const [isLoading, setIsLoading] = useState(false)
 
     const onFinderUserOrRepo = (event) => {
         event.preventDefault()
-        getUserData()
+        setIsLoading(true)
+        getUserData(setIsLoading)
         cleanFields()
     }
 
     return (
-        <div>
-            <form onSubmit={onFinderUserOrRepo}>
-                <input
-                    placeholder="Nome de usuário ou repositório"
-                    name={"searchedUser"}
-                    value={form.searchedUser}
-                    onChange={onChange}
-                    required
-                    pattern={"^.{3,}"}
-                />
-                <button>Buscar</button>
-            </form>
-        </div>
+        <InputsContainer>
+            <Paper elevation={3}>
+                <FormContainer onSubmit={onFinderUserOrRepo}>
+                    <TextField
+                        label="Usuário ou repositório"
+                        name={"searchedUser"}
+                        value={form.searchedUser}
+                        onChange={onChange}
+                        required
+                        variant="outlined"
+                        fullWidth
+                        margin="dense"
+                    />
+                    <ButtonSearch>
+                        <Button 
+                            type="submit" 
+                            variant="contained" 
+                            color="secondary" 
+                            fullWidth
+                        >
+                            Buscar
+                        </Button>
+                    </ButtonSearch>
+                </FormContainer>
+            </Paper>
+        </InputsContainer>
+
     )
 }

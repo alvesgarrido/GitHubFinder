@@ -6,14 +6,15 @@ import { gitHubKeys } from '../constants/gitHubKeys'
 const useRequestData = (initialState, url) => {
 
     const [data, setData] = useState(initialState)
-
     const { clientId, clientSecret } = gitHubKeys
 
     const getData = () => {
         axios
             .get(`${BASE_URL}/${url}client_id=${clientId}&client_secret=${clientSecret}`)
-            .then((res) => { setData(res.data) })
-            .catch((err) => { alert(err.response.data.message) })
+            .then((res) => { 
+                setData(res.data) 
+            })
+            .catch((err) => { alert("Usuário ou repositório não encontrado") })
     }
 
     return { data, setData, getData }
