@@ -6,7 +6,7 @@ export default function ErrorPage() {
     return (
         <ErrorPageMain>
             <MessageError>
-                <img src={LogoGitFinder} />
+                <img src={LogoGitFinder} alt="Logo Cinza" />
                 <h1>Ops, não encontramos esta página.</h1>
                 <h4>Navegue para outra página.</h4>
             </MessageError>

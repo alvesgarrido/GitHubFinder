@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext  } from 'react'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
@@ -10,12 +10,9 @@ export default function SearchUser() {
 
     const { form, onChange, cleanFields, getUserData } = useContext(GlobalStateContext)
 
-    const [isLoading, setIsLoading] = useState(false)
-
     const onFinderUserOrRepo = (event) => {
         event.preventDefault()
-        setIsLoading(true)
-        getUserData(setIsLoading)
+        getUserData()
         cleanFields()
     }
 

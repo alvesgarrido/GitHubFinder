@@ -4,6 +4,7 @@ export const ProfileContainer = styled.div`
     min-width: 300px;
     max-width: 400px;
     padding: 20px;
+    margin-bottom: 20px;
 `
 export const ProfileContent = styled.div`
     display: flex;
