@@ -4,7 +4,7 @@ O GitHubFinder é um buscador de usuários e repositórios do GitHub, desenvolvi
 
 Link de acesso: https://githubfinder-matheusgarrido.surge.sh/
 
-Com esta aplicação é possível obter dados de um usuário cadastrado no GitHub, detalhes como criação da conta, última atualização, seguidores, repositórios públicos e marcados com stars. Para isto, a pesquisa pode ser realizada de duas formas, pelo campo (input) de busca presente na página home (https://githubfinder-matheusgarrido.surge.sh/), e pela barra de navegação (ex.: https://githubfinder-matheusgarrido.surge.sh/alvesgarrido).
+Com esta aplicação é possível obter dados de um usuário cadastrado no GitHub, detalhes como data da criação da conta, última atualização, seguidores, repositórios públicos e marcados com stars. Para isto, a pesquisa pode ser realizada de duas formas, pelo campo (input) de busca presente na página home (https://githubfinder-matheusgarrido.surge.sh/), e pela barra de navegação (ex.: https://githubfinder-matheusgarrido.surge.sh/alvesgarrido).
 
 #Prints das telas da aplicação:
 ![image](https://user-images.githubusercontent.com/60436191/123671441-a559bf80-d814-11eb-9000-fcbff508f105.png)
@@ -37,5 +37,5 @@ A listagem de repositórios também permite o redirecionamento do usuário para 
 - As telas encontram-se responsivas, utilizando media queries no styled-components.
 
 #Fluxograma simplificado da aplicação:
-![fluxograma-githubfinder](https://user-images.githubusercontent.com/60436191/123671267-73e0f400-d814-11eb-8178-8f7449dda060.png)
+![Fluxograma-github-finder](https://user-images.githubusercontent.com/60436191/123720861-731f8080-d85b-11eb-984e-1872bbfbf834.png)
 
