@@ -19,16 +19,16 @@ Com esta aplicação é possível obter dados de um usuário cadastrado no GitHu
 
 A listagem de repositórios também permite o redirecionamento do usuário para a plataforma GitHub, para visualização de arquivos e códigos. Também é possível ser redirecionado para o perfil pesquisado, via clique no botão que se encontra no profile.
 
-#Páginas Principais:
-- Home: input de busca e renderização do profile do usuário encontrado.
-- Detalhes: detalhes de utilização do github do usuário pesquisado e listagem de repositórios.
-
 #Tecnologias e Bibliotecas utilizadas no desenvolvimento desta aplicação:
 - ReactJS.
 - JS.
 - React-router-dom.
 - Material-UI.
--Styled-components.
+- Styled-components.
+
+#Páginas Principais:
+- Home: input de busca e renderização do profile do usuário encontrado.
+- Detalhes: detalhes de utilização do github do usuário pesquisado e listagem de repositórios.
 
 #Página secundária:
 - Erro: página renderizada caso não seja encontrado o endereço informado pelo usuário.
